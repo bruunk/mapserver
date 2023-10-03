@@ -10,7 +10,7 @@
   # MAP: debug
   #=============================================================================
 
-  CONFIG   "MS_ERRORFILE" "/srv/mapserver/ms_error.txt"
+  CONFIG   "MS_ERRORFILE" "/tmp/ms_error.txt"
 
   # Redirect errors to apache errorstream
   # ENABLE for debugging purposes - quite spammy
