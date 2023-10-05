@@ -1,12 +1,12 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="datapunt@amsterdam.nl"
 
 RUN apt-get update && apt-get install -my curl wget gnupg -y
 RUN apt-get install net-tools nmap curl vim postgresql-client -y
 RUN apt install build-essential software-properties-common -y
-RUN add-apt-repository -y ppa:ubuntugis/ppa
+# RUN add-apt-repository -y ppa:ubuntugis/ppa
 
-RUN apt-get install -y gdal-bin gdal-data libgdal20
+RUN apt-get install -y gdal-bin gdal-data libgdal26
 RUN apt-get install -y apache2 apache2-utils libmapcache1 libapache2-mod-mapcache cgi-mapserver mapserver-bin
 
 # Enable these Apache modules
@@ -18,7 +18,7 @@ RUN rm /etc/apache2/mods-enabled/alias.conf
 COPY docker/000-default.conf /etc/apache2/sites-available/
 COPY docker/docker-entrypoint.sh /bin
 
-COPY . /srv/mapserver/  
+COPY . /srv/mapserver/
 
 EXPOSE 80
 
