@@ -18,7 +18,7 @@ RUN rm /etc/apache2/mods-enabled/alias.conf
 COPY docker/000-default.conf /etc/apache2/sites-available/
 COPY docker/docker-entrypoint.sh /bin
 
-COPY . /srv/mapserver/
+COPY . /srv/mapserver/  
 
 EXPOSE 80
 
