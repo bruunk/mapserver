@@ -3,7 +3,7 @@ LABEL maintainer="datapunt@amsterdam.nl"
 
 COPY tools/99timeout /etc/apt/apt.conf.d/
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y build-essential curl gnupg python3-pip software-properties-common wget
+RUN apt-get install -y build-essential curl gnupg python3-pip software-properties-common wget net-tools nmap curl vim postgresql-client
 RUN add-apt-repository -y ppa:ubuntugis/ppa
 
 RUN apt-get install -y gdal-bin gdal-data libgdal20
