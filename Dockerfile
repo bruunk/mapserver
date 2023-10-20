@@ -1,12 +1,12 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 LABEL maintainer="datapunt@amsterdam.nl"
 
-RUN apt-get update && apt-get install -my curl wget gnupg -y
-RUN apt-get install net-tools nmap curl vim postgresql-client -y
-RUN apt install build-essential software-properties-common -y
-# RUN add-apt-repository -y ppa:ubuntugis/ppa
+COPY tools/99timeout /etc/apt/apt.conf.d/
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y build-essential curl gnupg python3-pip software-properties-common wget
+RUN add-apt-repository -y ppa:ubuntugis/ppa
 
-RUN apt-get install -y gdal-bin gdal-data libgdal26
+RUN apt-get install -y gdal-bin gdal-data libgdal20
 RUN apt-get install -y apache2 apache2-utils libmapcache1 libapache2-mod-mapcache cgi-mapserver mapserver-bin
 
 # Enable these Apache modules
