@@ -17,6 +17,6 @@ jobs:
           with:
 # azure-devops-project-url: 'https://dev.azure.com/CloudCompetenceCenter/Data Diensten'
 # azure-devops-project-url: ${{ secrets.AZURE_DEVOPS_URL }}
-            azure-devops-project-url: 'https://dev.azure.com/CloudCompetenceCenter/${{ secrets.AZURE_DEVOPS_TEAM }}'
+            azure-devops-project-url: 'https://dev.azure.com/CloudCompetenceCenter/${{ variables.AZURE_DEVOPS_TEAM }}'
             azure-pipeline-name: 'Deploy Mapserver' 
             azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
